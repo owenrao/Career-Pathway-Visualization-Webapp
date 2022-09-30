@@ -1,0 +1,112 @@
+{% extends 'base.html' %} 
+{% block head %} 
+<style>
+    .nav-tabs{
+        border: none;
+        outline: none;
+    }
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+        border: 0;
+        }
+  </style>
+{% endblock %} {% block body %}
+<!--<div class="nav_tree">
+    <a href="/">Home</a>
+    <span> > </span>
+    <a class="current">Details: {{ payload.name }}</a>
+</div>-->
+<div class="detail-content">
+    <p class="title">{{ payload.name }}</p>
+    <div class="box" name="title_dscrpt">
+        <span>{{ payload.dscrpt }}</span>
+    </div>
+
+    <div class="box">
+        <ul class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#employment"><p>Employment Status</p></a></li>
+            <li><a data-toggle="tab" href="#salary"><p>Salary Status</p></a></li>
+        </ul>
+    </div>
+    
+    <div class="tab-content">
+        <div id="employment" class="tab-pane fade in active">
+            <p class="subtitle">Overview</p>
+            <p class="caption">This table aims to give us an idea about the employment status of {{ payload.name }} by including data about Total Employment Count, Employment demand and Educational Requirement. (Data is collected by <a href="https://www.bls.gov/oes/tables.htm">US Bureau of Labor Statistics</a>)</p>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Total Employment Count</th>
+                        <td>{{ payload.data.tot_emp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Employment Ratio among 1k Jobs</th>
+                        <td>{{ payload.data.jobs_1000 }}</th>
+                        
+                    </tr>
+                    <tr>
+                        <th>Educational Requirement</th>
+                        <td>{{ payload.data.educational_requirement }}</td>
+                    </tr>
+                </table>
+            </div>
+            <p class="subtitle">Employment per 1000 Jobs for {{ payload.name }} by State</p>
+            <p class="caption">Winthin domestic scope, {{ payload.name }} takes up {{ payload.data.jobs_1000 }} out of 1000 employment opportunities. This map compares the demand on {{ payload.name }} among states by visualizing its employment number per 1000 jobs.</p>
+            <div class="showcase">
+                <div id="employment_per_1000_map" class="chart" name="employment_per_1000_map">
+                </div>
+            </div>
+            <p class="subtitle">Change in Total Number of {{ payload.name }} Employed</p>
+            <p class="caption">As time passes, totla employment number for {{ payload.name }} changes. This bar graph shows us the trend of its change in employment number, and hopefully gives us an idea of how it will move in the future.</p>
+            <div class="showcase">
+                <div id="tot_emp_change_bar" class="chart" name="tot_emp_change_bar">
+                </div>
+            </div>
+        </div>
+        <div id="salary" class="tab-pane fade">
+            <p class="subtitle">Overview</p>
+            <p class="caption">This table aims to give us an idea about the salary status of {{ payload.name }} by including data about its Mean Annual and Hourly Income in the US. (Data is collected by <a href="https://www.bls.gov/oes/tables.htm">US Bureau of Labor Statistics</a>)</p>
+            <div>
+                <table class="table">
+                    <tr>
+                        <th>Mean Annual Income</th>
+                        <td>${{ payload.data.a_mean }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mean Hourly Income</th>
+                        <td>${{ payload.data.h_mean }}</th>
+                        
+                    </tr>
+                </table>
+            </div>
+            <p class="subtitle">Mean Annual Income for {{ payload.name }} by State</p>
+            <p class="caption">Winthin domestic scope, {{ payload.name }} has a Mean Annual Income of ${{ payload.data.a_mean }}. This map compares its income among states.</p>
+            <div class="showcase">
+                <div id="annual_income_map" class="chart" name="annual_income_map">
+                </div>
+            </div>
+            <p class="subtitle">Income Distribution for {{ payload.name }}</p>
+            <p class="caption">This income distribution chart shows the normal distribution of its income among states. This gives us an idea about which income bracket its main employers are in.</p>
+            <div class="showcase">
+                <div id="income_distribution_bar" class="chart" name="income_distribution_bar">
+                </div>
+            </div>
+            <p class="subtitle">Change in Annual Income of {{ payload.name }}</p>
+            <p class="caption">As time passes, Income for {{ payload.name }} changes. This bar graph shows us the trend of its change in Annual Income, and hopefully gives us an idea of how it will move in the future.</p>
+            <div class="showcase">
+                <div id="annual_income_change_line" class="chart" name="annual_income_change_line">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+<script type='text/javascript'>
+    Plotly.plot('employment_per_1000_map', {{ payload.graphs.employment_per_1000_map | safe}}, {autosize: true});
+    Plotly.plot('tot_emp_change_bar', {{ payload.graphs.tot_emp_change_bar | safe}}, {});
+    Plotly.plot('annual_income_map', {{ payload.graphs.annual_income_map | safe}}, {});
+    Plotly.plot('income_distribution_bar', {{ payload.graphs.income_distribution_bar | safe}}, {});
+    Plotly.plot('annual_income_change_line', {{ payload.graphs.annual_income_change_line | safe}}, {});
+</script>
+{% endblock %}

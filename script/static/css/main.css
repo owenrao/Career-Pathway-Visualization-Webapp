@@ -1,0 +1,153 @@
+.nav_bar {
+    margin: auto;
+    width: 100%;
+}
+
+#header_img {
+    height: 40px;
+}
+
+.content {
+    margin: auto;
+    width: 90%;
+}
+
+.tableauPlaceholder {
+    margin: auto;
+}
+
+.inline-panel {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.title{
+    font-size: 3vw;
+    font-weight: 500;
+    color: #FF4A22;
+}
+.subtitle{
+    font-size: 1.2vw;
+    font-weight: bold;
+    color: #000000;
+}
+.caption {
+    font-size: 0.7vw;
+    font-weight: light;
+    color: #000000;
+}
+li{
+    width: 50%;
+}
+
+li a{
+    margin:auto;
+    width:100%;
+}
+
+li p{
+    font-weight: 200;
+    text-align: center;
+    font-size: 1.2em;
+    color: #979797;
+}
+
+li.active p{
+    font-weight: 400;
+    color: black;
+}
+
+div{
+    margin-bottom: 50px;
+}
+
+div.nav_tree {
+    margin-left: 3%;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover { 
+    outline: 0;
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    cursor: default;
+    }
+
+.nav-tabs .active {
+    background: transparent !important;
+    color: white !important;
+    border-color:none;
+    border-bottom: 3px solid #F98C74;
+}
+
+a {
+    color: #979797;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a.current {
+    color:#F98C74;
+}
+
+.showcase {
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    width: 90%;
+    height: 450px;
+    /*border-radius: 25px;
+    border: 2px solid #f8baac;*/
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(184, 184, 184);
+}
+.chat {
+    margin: auto;
+}
+.plot-container,.svg-container {
+    height: 100%;
+}
+table {
+    margin-top: auto;
+    width: 100%;
+    height: 100%;
+}
+tr,th,td {
+    font-weight: normal;
+    text-align: center;
+}
+tr {
+    width: 100%;
+    height:auto;
+}
+td {
+    width: 50%;
+    font-weight: bold;
+    font-size: 2vw;
+    border-left: 2px white;
+}
+th{
+    font-size: 1.3vw;
+}
+div.table p{
+    text-align: center;
+}
+p {
+    font-size: 5vw;
+}
+
+.detail-content {
+    width: 60%;
+    margin: auto;
+}
