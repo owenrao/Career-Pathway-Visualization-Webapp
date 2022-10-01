@@ -2,6 +2,12 @@
 # Labor Statistics Dashboard for Data-Informed Career Path Decisions
 This is a Group Project for USC DSCI 551 created by Ruijie Rao, Ahmed Alsalim and Alexander Brown
 
+## Screenshots
+![image](https://user-images.githubusercontent.com/79633483/193423554-6b955059-b264-4074-872a-7ebea56b4cc5.png)
+![image](https://user-images.githubusercontent.com/79633483/193423559-c38ffa96-1cb1-4c52-b857-814b10173b3b.png)
+![image](https://user-images.githubusercontent.com/79633483/193423562-ae39189c-8112-4a62-8a30-ab5417b6de74.png)
+
+
 ## Motivation
 Right now, a record number of people are leaving their jobs and changing careers due to disruptions caused by the COVID-19 pandemic. According to Congressional Research Service, the unemployment rate in the US reached 14.8%—the highest rate observed since data collection began in 1948—in April 2020. Moreover, according to the latest CNBC jobs report, the number of people employed part-time for economic reasons, but would rather be working full-time, increased to 6.7 million in October after declining for five months. Meanwhile, choosing a new career is one of the most impactful decisions a person can make. It often takes years of careful planning and enormous costs. Unfortunately, many people often make very important decisions about which career they want to pursue or how to prepare for such a career, without a thorough knowledge of the current or future labor market.  Researchers found some factors of Career Decision Difficulty (CDD), such as employment status, lack of accurate information about careers, gender, and more. (Abdulfattah and Nizar). One additional complication to this issue is that much of the information that could be helpful in making career decisions, such as average salary, unemployment rate, worker hazards, turnover rate, and educational costs, is often hidden behind convoluted government or corporate datahubs and APIs. 
 
